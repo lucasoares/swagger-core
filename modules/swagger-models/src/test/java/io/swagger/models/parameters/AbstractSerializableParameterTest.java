@@ -336,6 +336,19 @@ public class AbstractSerializableParameterTest {
     }
 
     @Test
+    public void testGetExampleWithEmptyString() {
+        // given
+        instance.setProperty(new LongProperty());
+        example = "";
+
+        // when
+        instance.setExample(example);
+
+        // then
+        assertEquals(instance.getExample(), null, "The example must be null if the value is an empty string");
+    }
+
+    @Test
     public void testGetExampleWithBooleanProperty() {
         // given
         instance.setProperty(new BooleanProperty());
